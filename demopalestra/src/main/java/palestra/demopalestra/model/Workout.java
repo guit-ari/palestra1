@@ -1,7 +1,6 @@
 package palestra.demopalestra.model;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,10 +28,10 @@ public class Workout {
     private WorkoutCategory categorie;
    
     @OneToOne
-    private  MusclesGroups gruppoMuscolare;
-    @JsonProperty("pdifficoltà")
-    private int difficoltà;
+    private MusclesGroups gruppoMuscolare;
     
+    private int difficoltà;
+   
     @ManyToMany(mappedBy="workouts")
     private List<Equipment> equipments;
 

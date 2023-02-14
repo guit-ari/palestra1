@@ -1,6 +1,8 @@
 package palestra.demopalestra.model;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +23,7 @@ public class Equipment {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long equipmentId;
     private String nomeEquipaggiamento;
+    @JsonIgnore
     @ManyToMany
     private List<Workout> workouts;
     public Equipment(String nomeEquipaggiamento, List<Workout> workouts) {
